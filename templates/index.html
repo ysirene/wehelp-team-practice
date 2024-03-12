@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8" />
+        <title>狗狗氣象小幫手</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/weather.css">
+        <!-- <link rel="stylesheet" type="text/css" href="../static/css/main.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="background-image"></div>
+
+
+<!--header-->
+    <div class="header">
+
+    </div>
+
+<!--content-->
+     <div class="content">
+        <div class="section1">
+            <div class="left">
+                <div class="citys select-form">
+                    <div class="city select-btn">加載中</div>
+                    <ul class="drop-down">
+                        <li class="opt" id="taipei-btn">台北市</li>
+                        <li class="opt" id="new-taipei-btn">新北市</li>
+                        <li class="opt" id="taoyuan-btn">桃園市</li>
+                        <li class="opt" id="taichung-btn">台中市</li>
+                        <li class="opt" id="tainan-btn">台南市</li>
+                        <li class="opt" id="kaohsiung-btn">高雄市</li>
+                    </ul>
+                    <!-- <div class="triangle"></div> -->
+                </div>
+                <div class="taiwan">台灣</div>
+                <div class="time_part">
+                    <div class="date"></div>
+                    <div class="time"></div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="raintext">降雨機率</div>
+                <div class="rainbox">
+                    <div class="rainpercentage"></div>
+                    <div class="rainicon"></div>
+                </div>
+            </div>
+        </div>
+        <div class="section2">
+            <div class="section2-left">
+                <div class="weather">
+                    <div class="weathericon"></div>
+                    <div class="weathertext"></div>
+                    <div class="comfort"></div>
+                </div>
+                <div class="day_temperature">
+                    <div class="icon-arrow_up"></div>
+                    <div class="max_temperature"></div>
+                    <div class="icon-arrow_down"></div>
+                    <div class="min_temperature"></div>
+                </div>
+                <div class="now_temperature">
+                    <div class="temperature_degree"></div>
+                    <div class="degree">°</div>
+                    <div class="Celsiusdegrees">C</div>
+                    
+                </div>
+            </div>
+            <div class="section2-right">
+                <div class="subscribe">訂閱天氣資訊</div>
+                <div class="subscribe-icon"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="main-wrapper">
+
+    <div class="wrapper wrapper-1">
+        <div class="select-form-wrapper">
+            <i class="fa-solid fa-xmark"></i>
+
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-square-envelope icon"></i>
+            </div>
+
+            <p class="slogan">Become a Subscriber</p>
+            <p class="yourdc directive">輸入你的discord，並選擇您的所在地區</p>
+            <div class="input-wrapper">
+                <input type="text" class="user-input">
+            </div>
+            
+            <p class="yourchoose">您所在的地區：
+                <span class="user-location"></span>
+            </p>
+
+            <div class="container">
+                <div class="sub-select-form">
+                    <p class="sub-select-btn">選擇地區</p> 
+                    <ul class="sub-drop-down">
+                        <li class="sub-opt" >台北</li>
+                        <li class="sub-opt" >新北</li>
+                        <li class="sub-opt" >桃園</li>
+                        <li class="sub-opt" >台中</li>
+                        <li class="sub-opt" >台南</li>
+                        <li class="sub-opt" >高雄</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subscribe-btn">
+                <p>Subscribe</p>
+            </div>
+            <p class="yourdc edit-location" onclick="editSubscribe()">想要更改現有的訂閱？</p>
+
+        </div>
+    </div>
+    <div class="wrapper wrapper-2 wrapper-hidden wrapper-display">
+        <div class="select-form-wrapper select-form-wrapper-2">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-square-envelope icon"></i>
+            </div>
+
+            <p class="slogan slogan-2">Edit Subscription</p>
+            <p class="yourdc directive">輸入你的discord，更改地區或刪除訂閱</p>
+            <div class="input-wrapper">
+                <input type="text" class="user-input">
+            </div>
+            
+            <p class="yourchoose">您所在的地區：
+                <span class="user-location"></span>
+            </p>
+
+            <div class="container">
+                <div class="sub-select-form">
+                    <p class="sub-select-btn" >更改地區</p> 
+                    <ul class="sub-drop-down">
+                        <li class="sub-opt" >台北</li>
+                        <li class="sub-opt" >新北</li>
+                        <li class="sub-opt" >桃園</li>
+                        <li class="sub-opt" >台中</li>
+                        <li class="sub-opt" >台南</li>
+                        <li class="sub-opt" >高雄</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="unsubscribe-btn">
+                <p class="" >取消訂閱</p> 
+            </div>
+          
+
+            <div class="subscribe-btn">
+                <p>Edit your content</p>
+            </div>
+            <p class="yourdc edit-location" onclick="editSubscribe()">尚未訂閱？</p>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!--footer-->
+    <div class="footer">
+    
+    </div>        
+    <!-- <script src="/static/js/weather.js"></script> -->
+    <script src="/static/js/showForm.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/clickFormOption.js"></script>
+
+</body>
+
+</html>
+ 
+ 
